@@ -28,7 +28,7 @@ public class Main {
     public static final String COMMAND_ERROR = "Unknown command.";
     public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
     public static final String EXIST_SHARED_PHONES = "There are contacts that share phone numbers.";
-    public static final String ALL_DISTINCT_PHONES = "All contacts have different phone numbers";
+    public static final String ALL_DISTINCT_PHONES = "All contacts have different phone numbers.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -170,11 +170,9 @@ public class Main {
 
     private static void getContactByPhone(Scanner in, ContactBook cBook) {
         int phone;
-        boolean found;
-        String name;
+        boolean found = false;
+        String name = null;
         phone = in.nextInt(); in.nextLine();
-        found = false;
-        name = null;
         cBook.initializeIterator();
         while (cBook.hasNext() && !found) {
             Contact c = cBook.next();
