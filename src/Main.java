@@ -170,22 +170,12 @@ public class Main {
 
     private static void getContactByPhone(Scanner in, ContactBook cBook) {
         int phone;
-        boolean found = false;
-        String name = null;
         phone = in.nextInt(); in.nextLine();
-        cBook.initializeIterator();
-        while (cBook.hasNext() && !found) {
-            Contact c = cBook.next();
-            if (c.getPhone() == phone) {
-                found = true;
-                name = c.getName();
-            }
-        }
-        if (!found) {
-            System.out.println(PHONE_NOT_EXIST);
+        if (cBook.existsPhoneNumber(phone)) {
+            System.out.println(cBook.getContactByPhoneNumber(phone).getName());
         }
         else {
-            System.out.println(name);
+            System.out.println(PHONE_NOT_EXIST);
         }
     }
 

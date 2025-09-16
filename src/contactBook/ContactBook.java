@@ -75,6 +75,28 @@ public class ContactBook {
         return found;
     }
 
+    public boolean existsPhoneNumber(int phone) {
+        boolean found = false;
+        for (int i = 0; (i < counter)&&(!found); i++) {
+            if (contacts[i].getPhone() == phone) {
+                found = true;
+            }
+        }
+        return found;
+    }
+
+    public Contact getContactByPhoneNumber(int phone) {
+        boolean found = false;
+        int contactIdx = 0;
+        for (int i = 0; (i < counter)&&(!found); i++) {
+            if (contacts[i].getPhone() == phone) {
+                found = true;
+                contactIdx = i;
+            }
+        }
+        return contacts[contactIdx];
+    }
+
     private int searchIndex(String name) {
         int i = 0;
         int result = -1;
