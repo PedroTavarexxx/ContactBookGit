@@ -160,7 +160,12 @@ public class Main {
     }
 
     private static void arePhonesRepeated(ContactBook cBook) {
-
+        if (cBook.hasRepeatedPhones()){
+            System.out.println(EXIST_SHARED_PHONES);
+        }
+        else {
+            System.out.println(ALL_DISTINCT_PHONES);
+        }
     }
 
     private static void getContactByPhone(Scanner in, ContactBook cBook) {
